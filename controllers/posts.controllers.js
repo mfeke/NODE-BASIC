@@ -13,7 +13,13 @@ exports.creates = ( req , res) =>{
     const post = new Posts({
         name: req.body.name,
         surname: req.body.surname,
-        skills: req.body.skills
+        skills: req.body.skills,
+        email: req.body.email,
+        address: req.body.address
+
+        // email:String,
+            // skills :Array,
+            // address:Object
     })
     
     post.save(post)

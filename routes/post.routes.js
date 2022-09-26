@@ -3,11 +3,15 @@ module.exports = app =>{
       
     var router = require("express").Router();
      router.post("/", posts.creates)
-    //  router.get("/", )
+   
      router.get("/" , posts.findAll);
+
+     router.delete("/",posts.delete)
+
+     router.delete("/", posts.deleteAll)
      
      app.get("/published" , posts.findAllPublished  )
      
-     app.use("/api/posts", router)
+     app.use("/api/detail", router)
 
 }
