@@ -15,11 +15,8 @@ exports.creates = ( req , res) =>{
         surname: req.body.surname,
         skills: req.body.skills,
         email: req.body.email,
-        address: req.body.address
-
-        // email:String,
-            // skills :Array,
-            // address:Object
+        address: req.body.address,
+        jobTitle: req.body.jobTitle
     })
     
     post.save(post)

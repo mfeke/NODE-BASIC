@@ -34,7 +34,7 @@ app.get("/" , (req , res) =>{
      console.log("Cannot connect to the database!", err);
      process.exit();
    });
-//    require('./ROUTES/post.routes')(app);
+
 require('./routes/post.routes')(app)
 
 app.listen(PORT, ()=> {
