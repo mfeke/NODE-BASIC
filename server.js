@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({
 app.get("/" , (req , res) =>{
     res.json({info: "Server Online"})
 })
- const PORT = 5050
+ const PORT = 2022
  // Cross Orign Resource sharing
  var corsOptions = {
    origin: "http://localhost:8081/"

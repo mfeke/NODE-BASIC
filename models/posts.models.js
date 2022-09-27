@@ -3,10 +3,10 @@ module.exports = mongoose =>{
         {
             name: String,  // "thulane"
             surname: String, // "mfeketho " 
-            email:String, // "thulanemfeketho@gmail.com"
+            email:String, // "thulanemfeketho@gmail.com" 
             skills :Array, //  ["html" , "css" ] 
             jobTitle: String, //    "frontend developer" 
-            address:Object //    {"gugulethu" , "cape town"}
+            address:Object //    { area:"gugulethu" , city:"cape town"}
         },
         { timestamps : true}
     );

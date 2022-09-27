@@ -17,7 +17,7 @@ module.exports = app =>{
      router.delete("/", posts.deleteAll)
 
      // 
-     app.get("/published" , posts.findAllPublished  )
+     app.get("/published" , posts.update  )
      
      //ROOT ROUTE
      app.use("/profolio/detail", router)
