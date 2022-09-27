@@ -8,7 +8,7 @@ module.exports = app =>{
      // Find All profolio
      router.get("/" , posts.findAll);
 
-     router.get("/:id" , posts)
+     router.get("/:id" , posts.findOne)
 
      // Delete profolio
      router.delete("/:id",posts.delete)
@@ -17,7 +17,7 @@ module.exports = app =>{
      router.delete("/", posts.deleteAll)
 
      // 
-     app.get("/published" , posts.update  )
+     app.get("" , posts.update  )
      
      //ROOT ROUTE
      app.use("/profolio/detail", router)

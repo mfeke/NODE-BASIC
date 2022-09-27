@@ -1,12 +1,15 @@
 module.exports = mongoose =>{
     var schema = mongoose.Schema(
         {
-            name: String,  // "thulane"
-            surname: String, // "mfeketho " 
-            email:String, // "thulanemfeketho@gmail.com" 
-            skills :Array, //  ["html" , "css" ] 
-            jobTitle: String, //    "frontend developer" 
-            address:Object //    { area:"gugulethu" , city:"cape town"}
+            name: String,  
+            surname: String, 
+            email:String, 
+            skills :[String], 
+            jobTitle: String, 
+            address:{
+                street: String,
+                city: String
+            } 
         },
         { timestamps : true}
     );
