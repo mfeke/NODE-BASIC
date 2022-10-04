@@ -4,22 +4,17 @@ const  Posts= db.posts;
 
 
 exports.creates = ( req , res) =>{
-    if (!req.body.name){
+    if (!req.body.title){
         res.status(404).send({message: "Content of the post cannot be emptiy!"});
         return
 
     }
 
     const post = new Posts({
-        name: req.body.name,
-        surname: req.body.surname,
-        skills: req.body.skills,
-        email: req.body.email,
-        address: {
-          street: req.body.street,
-          city: req.body.city
-        },
-        jobTitle: req.body.jobTitle
+        title:req.body.title,
+        sides:req.body.sides,
+        price:req.body.price,
+        image: req.body.image
     })
     
     post.save(post)
@@ -38,8 +33,8 @@ exports.creates = ( req , res) =>{
 
 // Retrieve all Posts  from the database.
 exports.findAll = (req, res) => {
-const name = req.query.name;
-var condition = name ? { name: { $regex: new RegExp(name), $options: "i" } } : {};
+const title= req.query.title;
+var condition = title ? { name: { $regex: new RegExp(title), $options: "i" } } : {};
 
 Posts.find(condition)
   .then(data => {
@@ -82,7 +77,7 @@ exports.update = (req, res) => {
 
   const id = req.params.id;
 
-  Posts.findByIdAndUpdate(id, req.body, { useFindAndModify: false })
+  Posts.findByIdAndUpdate(id, req.body, { useFindAndModify: true})
     .then(data => {
       if (!data) {
         res.status(404).send({
